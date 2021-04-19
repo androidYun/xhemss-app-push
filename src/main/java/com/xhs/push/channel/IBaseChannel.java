@@ -3,6 +3,9 @@ package com.xhs.push.channel;
 import com.xhs.push.application.IBaseApplication;
 import com.xhs.push.model.NPushMessage;
 import com.xhs.push.model.PushResult;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 abstract public class IBaseChannel {
 
@@ -13,15 +16,15 @@ abstract public class IBaseChannel {
         initPushChanel(iBaseApplication);
     }
 
-    public  abstract PushResult pushNotificationMessage(NPushMessage entity);
+    public  abstract PushResult pushNotificationMessage(NPushMessage entity) throws IOException, ParseException;
 
-    public abstract PushResult pushTransmissionMessage(NPushMessage entity);
+    public abstract PushResult pushTransmissionMessage(NPushMessage entity) throws IOException, ParseException;
 
-    public abstract PushResult pushNotificationMessageList(NPushMessage entity);
+    public abstract PushResult pushNotificationMessageList(NPushMessage entity) throws IOException, ParseException;
 
-    public abstract PushResult pushTransmissionMessageList(NPushMessage entity);
+    public abstract PushResult pushTransmissionMessageList(NPushMessage entity) throws IOException, ParseException;
 
-    public  abstract PushResult initPushChanel(IBaseApplication iBaseApplication);
+    public  abstract void  initPushChanel(IBaseApplication iBaseApplication);
 
     public abstract String getPlatformName();
 }

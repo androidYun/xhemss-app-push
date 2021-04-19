@@ -8,6 +8,6 @@ import com.xhs.push.channel.IBaseChannel;
 public class OppoIntercept extends IBaseIntercept {
     @Override
     IBaseChannel loadChannel(IBaseApplication iBaseApplication) {
-        return ChannelFactory.getInstance().createChannel(GeTuiChannelImpl.class, iBaseApplication);
+        return ChannelFactory.getInstance().createChannel(OppoIntercept.class, iBaseApplication);
     }
 }

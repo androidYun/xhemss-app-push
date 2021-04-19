@@ -5,15 +5,19 @@ import com.xhs.push.channel.IBaseChannel;
 import com.xhs.push.model.NPushMessage;
 import com.xhs.push.model.UserRegisterData;
 import com.xhs.push.utils.CopyUtils;
+import lombok.Data;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Data
 abstract public class IBaseIntercept {
 
-    private IBaseIntercept nextBaseIntercept;
+    public IBaseIntercept nextBaseIntercept;
+
+
 
     abstract IBaseChannel loadChannel(IBaseApplication iBaseApplication);
 

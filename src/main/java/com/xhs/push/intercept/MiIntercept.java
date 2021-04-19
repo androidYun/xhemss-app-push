@@ -8,6 +8,6 @@ import com.xhs.push.channel.IBaseChannel;
 public class MiIntercept extends IBaseIntercept {
     @Override
     IBaseChannel loadChannel(IBaseApplication iBaseApplication) {
-        return ChannelFactory.getInstance().createChannel(MiIn.class, iBaseApplication);
+        return ChannelFactory.getInstance().createChannel(MiIntercept.class, iBaseApplication);
     }
 }

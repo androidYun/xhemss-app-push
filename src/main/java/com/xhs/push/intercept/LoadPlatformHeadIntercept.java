@@ -33,7 +33,7 @@ public class LoadPlatformHeadIntercept {
             while (iterator.hasNext()) {
                 IBaseIntercept iBaseIntercept = iterator.next();
                 if (i==0){
-                    previousIntercept=mIBaseIntercept;
+                    previousIntercept=iBaseIntercept;
                     mIBaseIntercept=previousIntercept;
                 }else{
                     previousIntercept.setNextBaseIntercept(iBaseIntercept);

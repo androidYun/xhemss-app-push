@@ -47,7 +47,7 @@ public class RepeatMessageAdapter extends IPushMessageAdapter {
             PushResult.fail();
         } else {
             nNPushMessage.setMRegisterList(platformList);
-            loadPlatformHeadIntercept.handleTransmissionIntercept(nNPushMessage, iBaseApplication);
+            loadPlatformHeadIntercept.handleNoticeIntercept(nNPushMessage, iBaseApplication);
         }
     }
 }

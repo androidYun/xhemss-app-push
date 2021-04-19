@@ -62,6 +62,9 @@ public class YunPushSender<K extends IBaseChannel> {
                 if (iBaseChannelClazz == null) {
                     throw new Exception("iBaseChannel is not null");
                 }
+                if (mPushMessage == null) {
+                    throw new Exception("mPushMessage is not null");
+                }
                 iBaseChannel = ChannelFactory.getInstance().createChannel(iBaseChannelClazz, iBaseApplication);
             }
             return new YunPushSender(this);
@@ -85,7 +88,7 @@ public class YunPushSender<K extends IBaseChannel> {
     /**
      * 发送穿透消息
      */
-    public PushResult sendTransmissionMessage(NPushMessage pushMessage) throws Exception {
+    public PushResult sendTransmissionMessage() throws Exception {
         if (mBuild.mPushMessage.getMRegisterList().size() == 1) {
             return mBuild.iBaseChannel.pushTransmissionMessage(mBuild.mPushMessage);
         } else {

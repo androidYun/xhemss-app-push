@@ -20,7 +20,7 @@ abstract public class IBaseIntercept {
 
     abstract IBaseChannel loadChannel(IBaseApplication iBaseApplication);
 
-    protected  Boolean handleNoticeIntercept(NPushMessage entity, IBaseApplication iBaseApplication) throws Exception {
+    public   Boolean handleNoticeIntercept(NPushMessage entity, IBaseApplication iBaseApplication) throws Exception {
         if (iBaseApplication == null || entity.getMRegisterList().isEmpty()) {
             return false;
         }
@@ -89,7 +89,7 @@ abstract public class IBaseIntercept {
     /**
      * 加载当前渠道的列表
      */
-    private List<UserRegisterData> loadCurrentChannelList(List<UserRegisterData> mRegisterList, IBaseChannel iBaseChannel) {
+    public List<UserRegisterData> loadCurrentChannelList(List<UserRegisterData> mRegisterList, IBaseChannel iBaseChannel) {
         if (mRegisterList.isEmpty()) {
             return new ArrayList<>();
         }
@@ -99,7 +99,7 @@ abstract public class IBaseIntercept {
     /**
      * 加载不同渠道的列表
      */
-    private List<UserRegisterData> loadOtherChannelList(List<UserRegisterData> mRegisterList, IBaseChannel iBaseChannel) {
+    public List<UserRegisterData> loadOtherChannelList(List<UserRegisterData> mRegisterList, IBaseChannel iBaseChannel) {
         if (mRegisterList.isEmpty()) {
             return new ArrayList<>();
         }

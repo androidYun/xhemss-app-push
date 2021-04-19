@@ -2,8 +2,10 @@ package com.xhs.push.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class UserRegisterData {
+public class UserRegisterData implements Serializable {
     public UserRegisterData( String clientId, String registerId,String platformName, Boolean online) {
         this.platformName = platformName;
         this.registerId = registerId;

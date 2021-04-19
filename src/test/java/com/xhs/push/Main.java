@@ -29,7 +29,7 @@ public class Main {
                 XiaoMiChannelImpl.PLATFORM_NAME,
                 false));
         NPushMessage mNPushMessage = new NPushMessage();
-        mNPushMessage.setGeTuiClickType("intent");
+        mNPushMessage.setGeTuiClickType("url");
         mNPushMessage.setUrl("https://docs.getui.com/getui/server/rest_v2/common_args/");
         String geTuiIntent = LoadIntentUtils.getInstance().getGeTuiIntent("{\"method\":\"newTask\",\"body\":{\"accidentName\":\"事故名称\",\"accidentCode\":\"任务编码\",\"accidentTaskCode\":\"子任务编码\",\"stationId\":\"分站ID\"}}",
                 loadIBaseApplication.getPackage());
@@ -47,11 +47,11 @@ public class Main {
 //         */
 //        YunPushSender pushSender = new YunPushSender.Builder<GeTuiChannelImpl>().setApplication(
 //                loadIBaseApplication
-//        ).setChannel(GeTuiChannelImpl.class).build();
-//        pushSender.sendNotificationMessage(mNPushMessage);
-        /**
-         * 发送渠道类型
-         */
+//        ).setChannel(GeTuiChannelImpl.class).setPushMessage(mNPushMessage).build();
+//        pushSender.sendTransmissionMessage();
+//        /**
+//         * 发送渠道类型
+//         */
         RepeatMessageAdapter repeatMessageAdapter=new RepeatMessageAdapter(mNPushMessage,loadIBaseApplication);
         YunPushSender pushSender = new YunPushSender.Builder<GeTuiChannelImpl>().setAdapter(repeatMessageAdapter).build();
         pushSender.notificationAdapter();

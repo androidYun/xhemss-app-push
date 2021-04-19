@@ -1,9 +1,16 @@
 package com.xhs.push.create;
 
+import com.xhs.push.application.ApplicationFactory;
 import com.xhs.push.application.IBaseApplication;
+import com.xhs.push.channel.ChannelFactory;
 import com.xhs.push.channel.IBaseChannel;
 
 public class YunPushSender<K extends IBaseChannel> {
+    private Builder<K> build;
+
+    public YunPushSender(Builder<K> build) {
+        this.build = build;
+    }
 
     class Builder<K extends IBaseChannel> {
 
@@ -19,39 +26,31 @@ public class YunPushSender<K extends IBaseChannel> {
             return this;
         }
 
-        fun<T :IBaseApplication> setApplication(Class<T> claszz):Builder<K>
-
-        {
-            this.iBaseApplication = ApplicationFactory.loadIBaseApplication(claszz)
-            return this
+        <T> Builder<K> setApplication(Class<T> claszz) {
+            this.iBaseApplication = ApplicationFactory.getInstance().loadIBaseApplication(claszz);
+            return this;
         }
 
         /**
          * 设置渠道
          */
-        fun setChannel(claszz:Class<K>):Builder<K>
-
-        {
-            iBaseChannelClazz = claszz
-            return this
+        Builder<K> setChannel(Class<K> claszz) {
+            iBaseChannelClazz = claszz;
+            return this;
         }
 
-        fun build():_root_ide_package_.com.xhs.push.create.YunPushSender<K>?
-
-        {
+        YunPushSender<K> build() throws Exception {
             if (iBaseApplication == null) {
-                throw Exception("IBaseApplication is not null")
-                return null
+                throw new Exception("IBaseApplication is not null");
             }
             if (iBaseChannelClazz == null) {
-                throw Exception("iBaseChannel is not null")
-                return null
+                throw new Exception("iBaseChannel is not null");
             }
             if (iBaseApplication == null) {
-                return null
+                return null;
             }
-            iBaseChannel = ChannelFactory.createChannel(iBaseChannelClazz !!, iBaseApplication)
-            return _root_ide_package_.com.xhs.push.create.YunPushSender(this)
+            iBaseChannel = ChannelFactory.getInstance().createChannel(iBaseChannelClazz, iBaseApplication);
+            return new YunPushSender(this);
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.xhs.push;
 
+import com.xhs.push.adapter.RepeatMessageAdapter;
 import com.xhs.push.application.ApplicationFactory;
 import com.xhs.push.application.DoctorApplicationImpl;
 import com.xhs.push.application.IBaseApplication;
@@ -41,12 +42,18 @@ public class Main {
         mNPushMessage.setBody("测试内容内容");
         mNPushMessage.setPayload("{\"method\":\"newEvent\",\"body\":{\"msgType\":\"new\",\"accidentCode\":\"任务编码\",\"accidentTaskCode\":\"子任务编码\",\"stationId\":\"分站ID\"}}");
         mNPushMessage.setMRegisterList(mRegsiterList);
+//        /**
+//         * 发送单个模式消息
+//         */
+//        YunPushSender pushSender = new YunPushSender.Builder<GeTuiChannelImpl>().setApplication(
+//                loadIBaseApplication
+//        ).setChannel(GeTuiChannelImpl.class).build();
+//        pushSender.sendNotificationMessage(mNPushMessage);
         /**
-         * 发送单个模式消息
+         * 发送渠道类型
          */
-        YunPushSender pushSender = new YunPushSender.Builder<GeTuiChannelImpl>().setApplication(
-                loadIBaseApplication
-        ).setChannel(GeTuiChannelImpl.class).build();
-        pushSender.sendNotificationMessage(mNPushMessage);
+        RepeatMessageAdapter repeatMessageAdapter=new RepeatMessageAdapter(mNPushMessage,loadIBaseApplication);
+        YunPushSender pushSender = new YunPushSender.Builder<GeTuiChannelImpl>().setAdapter(repeatMessageAdapter).build();
+        pushSender.notificationAdapter();
     }
 }

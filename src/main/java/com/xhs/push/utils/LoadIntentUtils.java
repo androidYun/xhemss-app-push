@@ -18,8 +18,8 @@ public class LoadIntentUtils {
         if (StringUtils.isBlank(packageName)) {
             throw new Exception("packageName not support null");
         }
-        return String.format("intent:#Intent;launchFlags=0x4000000;package={0};component={0}/com.push.core.link.GeTuiDeepLinkReceiveActivity;S.payload={1};end",
-                packageName, EncodeUtil.convertStringToUTF8(payload));
+        return String.format("intent:#Intent;launchFlags=0x4000000;package=%s};component=%s/com.push.core.link.GeTuiDeepLinkReceiveActivity;S.payload=%s;end",
+                packageName, packageName,EncodeUtil.convertStringToUTF8(payload));
     }
 
 

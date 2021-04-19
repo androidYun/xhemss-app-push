@@ -164,8 +164,8 @@ public class GeTuiChannelImpl extends IBaseChannel {
         gtNotification.setTitle(entity.getTitle());
         gtNotification.setClickType(entity.getGeTuiClickType());
         gtNotification.setPayload(entity.getPayload());
-        gtNotification.setUrl("url".equals(entity.getGeTuiClickType()) ? entity.getUrl() : "");
-        gtNotification.setIntent("intent".equals(entity.getGeTuiClickType()) ? entity.getGeTuiIntent() : "");
+        gtNotification.setUrl("url".equals(entity.getGeTuiClickType()) ? entity.getUrl() : null);
+        gtNotification.setIntent("intent".equals(entity.getGeTuiClickType()) ? entity.getGeTuiIntent() : null);
         PushMessage pushMessage = new PushMessage();
         pushMessage.setNotification(gtNotification);
         pushDTO.setPushMessage(pushMessage);

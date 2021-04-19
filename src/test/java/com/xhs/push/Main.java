@@ -30,8 +30,10 @@ public class Main {
         NPushMessage mNPushMessage = new NPushMessage();
         mNPushMessage.setGeTuiClickType("intent");
         mNPushMessage.setUrl("https://docs.getui.com/getui/server/rest_v2/common_args/");
-        mNPushMessage.setGeTuiIntent(LoadIntentUtils.getInstance().getGeTuiIntent("{\"method\":\"newTask\",\"body\":{\"accidentName\":\"事故名称\",\"accidentCode\":\"任务编码\",\"accidentTaskCode\":\"子任务编码\",\"stationId\":\"分站ID\"}}",
-                loadIBaseApplication.getPackage()));
+        String geTuiIntent = LoadIntentUtils.getInstance().getGeTuiIntent("{\"method\":\"newTask\",\"body\":{\"accidentName\":\"事故名称\",\"accidentCode\":\"任务编码\",\"accidentTaskCode\":\"子任务编码\",\"stationId\":\"分站ID\"}}",
+                loadIBaseApplication.getPackage());
+        System.out.println("打印测试" + geTuiIntent);
+        mNPushMessage.setGeTuiIntent(geTuiIntent);
         mNPushMessage.setHuaWeiClickType(1);
         mNPushMessage.setHuaWeiIntent(LoadIntentUtils.getInstance().getHuaWeiIntent("{\"method\":\"newTask\",\"body\":{\"accidentName\":\"事故名称\",\"accidentCode\":\"任务编码\",\"accidentTaskCode\":\"子任务编码\",\"stationId\":\"分站ID\"}}"
         ));

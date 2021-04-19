@@ -20,7 +20,7 @@ public class XiaoMiChannelImpl extends IBaseChannel {
 
     IBaseApplication iBaseApplication = null;
 
-    public XiaoMiChannelImpl(IBaseApplication iBaseApplication) {
+    public XiaoMiChannelImpl(IBaseApplication iBaseApplication) throws Exception {
         super(iBaseApplication);
         this.iBaseApplication = iBaseApplication;
     }
@@ -36,7 +36,7 @@ public class XiaoMiChannelImpl extends IBaseChannel {
         mSender = new Sender(iBaseApplication.getXiaoMiSecret());
     }
 
-
+    @Override
     public PushResult pushNotificationMessage(NPushMessage entity) throws IOException, ParseException {
         List list = entity.getMRegisterList().stream().filter(userRegisterData ->
                 !StringUtils.isBlank(userRegisterData.getRegisterId())).map(userRegisterData ->
@@ -59,7 +59,7 @@ public class XiaoMiChannelImpl extends IBaseChannel {
             return PushResult.fail(result.getReason());
         }
     }
-
+    @Override
     public PushResult pushTransmissionMessage(NPushMessage entity) throws IOException, ParseException {
         List list = entity.getMRegisterList().stream().filter(userRegisterData ->
                 !StringUtils.isBlank(userRegisterData.getRegisterId())).map(userRegisterData ->
@@ -82,13 +82,11 @@ public class XiaoMiChannelImpl extends IBaseChannel {
             return PushResult.fail(result.getReason());
         }
     }
-
-    public PushResult
-
-    pushNotificationMessageList(NPushMessage entity) throws IOException, ParseException {
+    @Override
+    public PushResult pushNotificationMessageList(NPushMessage entity) throws IOException, ParseException {
         return pushNotificationMessage(entity);
     }
-
+    @Override
     public PushResult pushTransmissionMessageList(NPushMessage entity) throws IOException, ParseException {
         return pushNotificationMessage(entity);
     }
@@ -99,5 +97,5 @@ public class XiaoMiChannelImpl extends IBaseChannel {
         return PLATFORM_NAME;
     }
 
-    final static String PLATFORM_NAME = "xiaoMi";
+  public   final static String PLATFORM_NAME = "xiaoMi";
 }

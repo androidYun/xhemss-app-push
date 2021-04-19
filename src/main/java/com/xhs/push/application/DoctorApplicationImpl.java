@@ -3,62 +3,62 @@ package com.xhs.push.application;
 public class DoctorApplicationImpl implements IBaseApplication {
     @Override
     public String getGeTuiAppId() {
-        return null;
+        return "eMadEsYoQR8yllVS4asEh2";
     }
 
     @Override
     public String getGeTuiAppKey() {
-        return null;
+        return "PorWbRRxOq6KAo7teCqnp1";
     }
 
     @Override
     public String getGeTuiMasterSecret() {
-        return null;
+        return "ZMOEy8Ntqv5TIbh62lw711";
     }
 
     @Override
     public String getHuaWeiAppId() {
-        return null;
+        return "104034331";
     }
 
     @Override
     public String getHuaWeiAppKey() {
-        return null;
+        return "CgB6e3x9CtqVDjS/rqFb9dqTBVnRQ0gzXPT+6mQt+SOjNsgiqcBGhclQfodp3NHrtUDhdqpHicce2lWLW36KcQY0";
     }
 
     @Override
     public String getHuaWeiSecret() {
-        return null;
+        return "fa00f0c920bf8f8c8337640855f75e3e9ebdac377c755a9bd0faa23c6f5f15c0";
     }
 
     @Override
     public String getXiaoMiAppId() {
-        return null;
+        return "2882303761519867990";
     }
 
     @Override
     public String getXiaoMiAppKey() {
-        return null;
+        return "5521986774990";
     }
 
     @Override
     public String getXiaoMiSecret() {
-        return null;
+        return "7DqLxGsTvSdSLX7hSAj6+g==";
     }
 
     @Override
-    public int getVivoAppId() {
+    public int getVivoAppId(){
         return 0;
     }
 
     @Override
     public String getVivoAppKey() {
-        return null;
+        return "";
     }
 
     @Override
     public String getVivoAppSecret() {
-        return null;
+        return "";
     }
 
     @Override
@@ -68,26 +68,26 @@ public class DoctorApplicationImpl implements IBaseApplication {
 
     @Override
     public String getOppoAppKey() {
-        return null;
+        return "";
     }
 
     @Override
     public String getOppoAppSecret() {
-        return null;
+        return "";
     }
 
     @Override
     public String getAppName() {
-        return null;
+        return "doctor";
     }
 
     @Override
     public String getPackage() {
-        return null;
+        return "com.xhs.em_doctor";
     }
 
     @Override
     public String getLogo() {
-        return null;
+        return "logo.png";
     }
 }

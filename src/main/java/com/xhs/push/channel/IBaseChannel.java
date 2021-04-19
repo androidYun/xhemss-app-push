@@ -11,20 +11,20 @@ abstract public class IBaseChannel {
 
     private IBaseApplication iBaseApplication;
 
-    public IBaseChannel(IBaseApplication iBaseApplication) {
+    public IBaseChannel(IBaseApplication iBaseApplication) throws Exception {
         this.iBaseApplication = iBaseApplication;
         initPushChanel(iBaseApplication);
     }
 
-    public  abstract PushResult pushNotificationMessage(NPushMessage entity) throws IOException, ParseException;
+    public  abstract PushResult pushNotificationMessage(NPushMessage entity) throws Exception;
 
-    public abstract PushResult pushTransmissionMessage(NPushMessage entity) throws IOException, ParseException;
+    public abstract PushResult pushTransmissionMessage(NPushMessage entity) throws Exception;
 
-    public abstract PushResult pushNotificationMessageList(NPushMessage entity) throws IOException, ParseException;
+    public abstract PushResult pushNotificationMessageList(NPushMessage entity) throws Exception;
 
-    public abstract PushResult pushTransmissionMessageList(NPushMessage entity) throws IOException, ParseException;
+    public abstract PushResult pushTransmissionMessageList(NPushMessage entity) throws Exception;
 
-    public  abstract void  initPushChanel(IBaseApplication iBaseApplication);
+    public  abstract void  initPushChanel(IBaseApplication iBaseApplication) throws Exception;
 
     public abstract String getPlatformName();
 }

@@ -2,18 +2,18 @@ package com.xhs.push.application;
 
 public class ExpertApplicationImpl implements IBaseApplication {
     @Override
-    public String getGeTuiAppId() {
-        return null;
+    public String getGeTuiAppId(){
+        return "yZxxCJSNnB8dq9yk1YemdA";
     }
 
     @Override
     public String getGeTuiAppKey() {
-        return null;
+        return "WIOIemjGQO7JmDXrMnd0I8";
     }
 
     @Override
     public String getGeTuiMasterSecret() {
-        return null;
+        return "LwvVxd8lNtAv4uDaNiNp61";
     }
 
     @Override

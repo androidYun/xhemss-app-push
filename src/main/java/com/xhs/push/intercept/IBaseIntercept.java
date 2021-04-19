@@ -21,7 +21,7 @@ abstract public class IBaseIntercept {
 
     abstract IBaseChannel loadChannel(IBaseApplication iBaseApplication);
 
-    Boolean handleNoticeIntercept(NPushMessage entity, IBaseApplication iBaseApplication) throws IOException, ClassNotFoundException {
+    Boolean handleNoticeIntercept(NPushMessage entity, IBaseApplication iBaseApplication) throws Exception {
         if (iBaseApplication == null || entity.getMRegisterList().isEmpty()) {
             return false;
         }
@@ -53,7 +53,7 @@ abstract public class IBaseIntercept {
         }
     }
 
-    Boolean handleTransmissionIntercept(NPushMessage entity, IBaseApplication iBaseApplication) throws IOException, ClassNotFoundException {
+    Boolean handleTransmissionIntercept(NPushMessage entity, IBaseApplication iBaseApplication) throws Exception {
         if (iBaseApplication == null || entity.getMRegisterList().isEmpty()) {
             return false;
         }

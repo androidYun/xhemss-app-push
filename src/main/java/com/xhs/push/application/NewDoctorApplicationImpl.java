@@ -3,49 +3,48 @@ package com.xhs.push.application;
 public class NewDoctorApplicationImpl implements IBaseApplication {
     @Override
     public String getGeTuiAppId() {
-        return null;
+        return "2fqZP5mrOh8ZwrWhAOvaW2";
     }
 
     @Override
     public String getGeTuiAppKey() {
-        return null;
+        return "hZCltHTlgnAw9YURf5y5L";
     }
 
     @Override
     public String getGeTuiMasterSecret() {
-        return null;
+        return "uZcBv5nYsG6ePCfRoqiiNA";
     }
 
     @Override
     public String getHuaWeiAppId() {
-        return null;
+        return "104034331";
     }
 
     @Override
     public String getHuaWeiAppKey() {
-        return null;
+        return "CgB6e3x9CtqVDjS/rqFb9dqTBVnRQ0gzXPT+6mQt+SOjNsgiqcBGhclQfodp3NHrtUDhdqpHicce2lWLW36KcQY0";
     }
 
     @Override
     public String getHuaWeiSecret() {
-        return null;
+        return "fa00f0c920bf8f8c8337640855f75e3e9ebdac377c755a9bd0faa23c6f5f15c0";
     }
 
     @Override
     public String getXiaoMiAppId() {
-        return null;
+        return "2882303761519874482";
     }
 
     @Override
     public String getXiaoMiAppKey() {
-        return null;
+        return "5781987440482";
     }
 
     @Override
     public String getXiaoMiSecret() {
-        return null;
+        return "u2ac3W7/m0JkHilTxenf/A==";
     }
-
     @Override
     public int getVivoAppId() {
         return 0;

@@ -11,7 +11,7 @@ public class LoadIntentUtils {
         static final LoadIntentUtils LOADINTENTUTILS = new LoadIntentUtils();
     }
 
-    String getGeTui(String payload, String packageName) throws Exception {
+    public String getGeTuiIntent(String payload, String packageName) throws Exception {
         if (StringUtils.isBlank(payload)) {
             throw new Exception("payload not support null");
         }
@@ -19,15 +19,15 @@ public class LoadIntentUtils {
             throw new Exception("packageName not support null");
         }
         return String.format("intent:#Intent;launchFlags=0x4000000;package={0};component={0}/com.push.core.link.GeTuiDeepLinkReceiveActivity;S.payload={1};end",
-                packageName, new String(payload.getBytes(), "UTF-8"));
+                packageName, EncodeUtil.convertStringToUTF8(payload));
     }
 
 
-    String getHuaWeiIntent(String payload) throws Exception {
+    public String getHuaWeiIntent(String payload) throws Exception {
         if (StringUtils.isBlank(payload)) {
             throw new Exception("payload not support null");
         }
-        return String.format("intent://com.xhs.push/deepLink?#Intent;scheme=push;launchFlags=0x4000000;S.payload=%s;end", new String(payload.getBytes(), "UTF-8"));
+        return String.format("intent://com.xhs.push/deepLink?#Intent;scheme=push;launchFlags=0x4000000;S.payload=%s;end",EncodeUtil.convertStringToUTF8(payload));
     }
 
     String getOppoIntent() {
